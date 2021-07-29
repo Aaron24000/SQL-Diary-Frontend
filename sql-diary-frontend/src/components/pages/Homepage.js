@@ -21,33 +21,33 @@ const Homepage = () => {
                 </h1>
             </Col>
               <Col md={8}  className="d-block text-white">
-                <div className="d-flex">
+                <div className="d-flex pt-5">
                   <div className="p-4 align-self-start">
-                    <i className="fas fa-chart-bar fa-2x"></i>
+                    <i className="fas fa-pencil-alt fa-2x"></i>
                   </div>
                   <div className="p-4 align-self-end">
-                  See all of the conferences across the NCAA
+                  Create an account to share your blogs 
                   </div>
                 </div>
                 <div className="d-flex">
                   <div className="p-4 align-self-start">
-                    <i className="fas fa-chart-bar fa-2x"></i>
+                    <i className="fas fa-pencil-alt fa-2x"></i>
                   </div>
                   <div className="p-4 align-self-end">
-                  Search stadiums across 50 states and 30+ conferences!
+                  Share your blogs to facebook to connect it with friends on social media
                   </div>
                 </div>
                 <div className="d-flex">
                   <div className="p-4 align-self-start">
-                    <i className="fas fa-chart-bar fa-2x"></i>
+                    <i className="fas fa-pencil-alt fa-2x"></i>
                   </div>
                   <div className="p-4 align-self-end">
-                  Get team info on individual teams, including team logos!
+                  Tell your unique story to the world.
                   </div>
                 </div>
               </Col>
               <Col md={4} className="img-fluid d-none d-lg-block pt-5">
-              <img src={BURDEN} style={{ width: '500px'}}></img>
+              <img src={BURDEN} alt="" style={{ width: '500px'}}></img>
               </Col>
             </div>
           </div>
@@ -55,75 +55,76 @@ const Homepage = () => {
       </header>
 
       {/* Latest blogs will go here with a limit of 3-5 */}
-      <section className="bg-light" id="latest-blogs-section">
+      <section className="bg-dark" id="latest-blogs-section">
         <Container className="pt-5 pb-5">
+        <hr style={{ color: '#fff'}}/>
           <Row>
             <Col md={12}>
-              <h1 className="display-4 text-center">Latest Blogs</h1>
+              <h1 className="display-4 text-center text-info">Latest Blogs</h1>
             </Col>
             <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center mx-auto">
+              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
                 <Card.Img
                   variant="top"
                   src="https://via.placeholder.com/286x180"
                 />
                 <Card.Body>
-                  <Card.Title>Blog Title</Card.Title>
-                  <Card.Text>
+                  <Card.Title className='text-info'>Blog Title</Card.Title>
+                  <Card.Text className='text-white'>
                     Posted by the person who created this, ofc
                   </Card.Text>
-                  <Button variant="primary" className="rounded-pill">
+                  <Button variant="info" className="rounded-pill">
                     Check it out!
                   </Button>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center mx-auto">
+              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
                 <Card.Img
                   variant="top"
                   src="https://via.placeholder.com/286x180"
                 />
                 <Card.Body>
-                  <Card.Title>Blog Title</Card.Title>
-                  <Card.Text>
+                  <Card.Title className='text-info'>Blog Title</Card.Title>
+                  <Card.Text className='text-white'>
                     Posted by the person who created this, ofc
                   </Card.Text>
-                  <Button variant="primary" className="rounded-pill">
+                  <Button variant="info" className="rounded-pill">
                     Check it out!
                   </Button>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center mx-auto">
+              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
                 <Card.Img
                   variant="top"
                   src="https://via.placeholder.com/286x180"
                 />
                 <Card.Body>
-                  <Card.Title>Blog Title</Card.Title>
-                  <Card.Text>
+                  <Card.Title className='text-info'>Blog Title</Card.Title>
+                  <Card.Text className='text-white'>
                     Posted by the person who created this, ofc
                   </Card.Text>
-                  <Button variant="primary" className="rounded-pill">
+                  <Button variant="info" className="rounded-pill">
                     Check it out!
                   </Button>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center mx-auto">
+              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
                 <Card.Img
                   variant="top"
                   src="https://via.placeholder.com/286x180"
                 />
                 <Card.Body>
-                  <Card.Title>Blog Title</Card.Title>
+                  <Card.Title className='text-info'>Blog Title</Card.Title>
                   <Card.Text>
                     Posted by the person who created this, ofc
                   </Card.Text>
-                  <Button variant="danger" className="rounded-pill">
+                  <Button variant="info" className="rounded-pill">
                     Check it
                   </Button>
                 </Card.Body>
@@ -136,7 +137,8 @@ const Homepage = () => {
       {/* Section with fontawesome stuffs */}
       <section id="home-fontawesome" className="bg-dark text-white">
         <Container className="pt-4 pb-4">
-          <Row>
+        <hr style={{ color: '#fff'}}/>
+          <Row className="pt-4">
             <Col md={4} className="text-center pb-5">
               <i class="fas fa-blog fa-3x p-2"></i>
               <h3>Create your blog</h3>
@@ -160,14 +162,15 @@ const Homepage = () => {
       </section>
 
       {/* About */}
-      <section id="about" className="pt-5 bg-light pb-5">
+      <section id="about" className="pt-5 bg-dark pb-5">
         <Container>
+        <hr style={{ color: '#fff'}}/>
           <Row>
             <Col md={12}>
-              <h1 className="display-4 text-center">About</h1>
+              <h1 className="display-4 text-center text-white">About</h1>
             </Col>
             <Col md={12}>
-              <p>
+              <p className="text-white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 mollis lorem nisi. Suspendisse pretium est ac mi dignissim
                 finibus. Maecenas vestibulum convallis hendrerit. Quisque
@@ -183,6 +186,7 @@ const Homepage = () => {
       {/* Footer */}
       <footer id="main-footer" class="text-center text-white bg-dark p-4">
       <div class="container">
+      <hr style={{ color: '#fff'}}/>
         <div class="row">
           <div class="col">
             <p>
