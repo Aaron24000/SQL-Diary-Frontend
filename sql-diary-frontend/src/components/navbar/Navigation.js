@@ -10,7 +10,7 @@ import {
 
 const Navigation = () => {
   return (
-    <Navbar fixed="top" bg="dark" variant="dark" expand="lg" className="navigate">
+    <Navbar sticky="top" bg="dark" variant="dark" expand="lg" className="navigate">
       <Container>
         <Navbar.Brand className="text-info" href="/">SQL Diary</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

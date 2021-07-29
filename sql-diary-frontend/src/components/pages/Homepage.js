@@ -13,7 +13,7 @@ const Homepage = () => {
     <Fragment>
       <header id="home-heading">
         <div className="heading-photo">
-          <div className="home-inner container pt-5">
+          <div className="home-inner container  pt-5">
             <div className="row">
             <Col md={12}>
             <h1  className="display-4 text-white pt-5">
