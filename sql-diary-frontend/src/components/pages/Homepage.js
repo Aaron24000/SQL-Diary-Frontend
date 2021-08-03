@@ -5,10 +5,29 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import BURDEN from "../photos/aaron-burden-xG8IQMqMITM-unsplash.jpg";
+import { API_URL } from '../../config.json';
+import axios from 'axios';
 
 const Homepage = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3OTk0NjA3LCJleHAiOjE2Mjg1OTk0MDd9.lNZ4XxRrOlEdDnQOsl4PhE6JrMLnCDmNXbMDx6rBMag';
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      setLoading(true);
+      const res = await axios.get(`${API_URL}/blogs`);
+      setBlogs(res.data);
+      console.log(res.data[0].userId);
+      setLoading(false);
+    }
+
+    fetchBlogs();
+  }, [])
+
   return (
     <Fragment>
       <header id="home-heading">
@@ -62,16 +81,18 @@ const Homepage = () => {
             <Col md={12}>
               <h1 className="display-4 text-center text-info">Latest Blogs</h1>
             </Col>
-            <Col md={3} className="pb-2">
+            {blogs.map((blog, idx) => (
+              <Col key={idx} md={3} className="pb-2">
               <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
                 <Card.Img
                   variant="top"
-                  src="https://via.placeholder.com/286x180"
+                  src={blog.imageUrl}
+                  // style={{ width: '300px', height: '300px'}}
                 />
                 <Card.Body>
-                  <Card.Title className='text-info'>Blog Title</Card.Title>
+                  <Card.Title className='text-info'>{blog.title}</Card.Title>
                   <Card.Text className='text-white'>
-                    Posted by the person who created this, ofc
+                    Posted by {blog.userId.name}
                   </Card.Text>
                   <Button variant="info" className="rounded-pill">
                     Check it out!
@@ -79,57 +100,7 @@ const Homepage = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
-                <Card.Img
-                  variant="top"
-                  src="https://via.placeholder.com/286x180"
-                />
-                <Card.Body>
-                  <Card.Title className='text-info'>Blog Title</Card.Title>
-                  <Card.Text className='text-white'>
-                    Posted by the person who created this, ofc
-                  </Card.Text>
-                  <Button variant="info" className="rounded-pill">
-                    Check it out!
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
-                <Card.Img
-                  variant="top"
-                  src="https://via.placeholder.com/286x180"
-                />
-                <Card.Body>
-                  <Card.Title className='text-info'>Blog Title</Card.Title>
-                  <Card.Text className='text-white'>
-                    Posted by the person who created this, ofc
-                  </Card.Text>
-                  <Button variant="info" className="rounded-pill">
-                    Check it out!
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={3} className="pb-2">
-              <Card style={{ width: "18rem" }} className="text-center bg-secondary mx-auto">
-                <Card.Img
-                  variant="top"
-                  src="https://via.placeholder.com/286x180"
-                />
-                <Card.Body>
-                  <Card.Title className='text-info'>Blog Title</Card.Title>
-                  <Card.Text>
-                    Posted by the person who created this, ofc
-                  </Card.Text>
-                  <Button variant="info" className="rounded-pill">
-                    Check it
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
+            ))}
           </Row>
         </Container>
       </section>
